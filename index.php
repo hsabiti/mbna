@@ -7,13 +7,9 @@ $max = 3999;
 
 $options = 'g:p:';
 $methods = array('g' => 'generate', 'p'=>'parse');
-//print_r($argv);
 
 $args = getopt($options);
 
-print_r($args);
-
-//input argument validation
 
 $validation = validate_args ($args);
 
@@ -28,8 +24,11 @@ if ($validation['error']) {
 
 $RomanNumerals = new RomanNumerals();
 
+echo "\n";
+
 echo call_user_func_array(array($RomanNumerals, $methods[array_keys($args)[0]]), array_values($args));
 
+echo "\n\n";
 
 
 
